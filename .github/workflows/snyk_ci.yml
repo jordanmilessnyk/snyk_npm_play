@@ -1,0 +1,48 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  snyk_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      -
+        name: Setup Snyk + snyk-to-html 
+        run: |
+          npm install snyk-to-html -g
+      -
+        name: Snyk Check
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          json: true
+      -
+        name: snyk to html
+        run: |
+          mkdir build
+          snyk-to-html -i snyk.json -o build/results.html
+      -
+        uses: actions/upload-artifact@v3
+        with:
+          name: vuln_report
+          path: build/results.html
+      -
+        name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: docs # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+
+
+      
