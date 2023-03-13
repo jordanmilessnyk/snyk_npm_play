@@ -1,2 +1,4 @@
 node_modules
 .dccache
+.idea
+.DS_Store
