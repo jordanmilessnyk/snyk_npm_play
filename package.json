@@ -1,5 +1,5 @@
 {
-  "name": "@my-scope/snyk_npm",
+  "name": "snyk_npm",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,14 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-<<<<<<< HEAD
     "react": "16.5.0",
     "react-dom": "16.5.0"
-=======
-    "tinymce": "4.1.0",
-    "restify":"10.0.0",
-    "restify-cors-middleware2":"2.2.0"
->>>>>>> 81a111c (adding restify)
   },
   "author": "",
   "license": "ISC"
