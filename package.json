@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "react": "15.6",
-    "react-dom": "15.6"
+    "react-dom": "15.6",
+    "restify": "10.0.0",
+    "restify-cors-middleware2":"2.2.0"
   },
   "author": "",
   "license": "ISC"
