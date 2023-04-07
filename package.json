@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@my-scope/private-package-test": "1.0.0",
-    "@sveltejs/kit":"1.15.1"
+    "@my-scope/private-package-test": "1.0.0"
   },
   "author": "",
   "license": "ISC"
