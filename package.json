@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@sveltejs/kit":"1.15.1",
+    "react": "15.6",
     "tinymce": "4.1.0"
   },
   "author": "",
